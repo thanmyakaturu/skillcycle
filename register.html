@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join SkillCycle</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo.jpg" alt="SkillCycle logo" />
+      SkillCycle
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <button class="theme-btn" onclick="toggleTheme()">🌙</button>
+    </nav>
+  </header>
+
+  <section class="form-section">
+    <h2>Join SkillCycle</h2>
+    <form onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <select required>
+        <option value="">Select your Role</option>
+        <option>Learner</option>
+        <option>Teacher</option>
+        <option>Both</option>
+      </select>
+      <input type="text" placeholder="Skill You Want to Learn" required>
+      <textarea placeholder="Describe your Skills or Interests" rows="4"></textarea>
+      <button type="submit" class="btn-primary">Register</button>
+    </form>
+  </section>
+
+  <!-- ✅ Google Meet Section -->
+  <section class="form-section" style="margin-top: 40px;">
+    <h2>Join or Create a Live Session</h2>
+    <p style="text-align:center; margin-bottom:15px;">Start a new Google Meet or join one using a code.</p>
+    <div style="text-align:center;">
+      <a href="https://meet.google.com/new" target="_blank" class="btn-primary">🎥 Start New Meeting</a>
+      <br><br>
+      <input type="text" id="meetCode" placeholder="Enter Meet Code" style="max-width:250px; padding:10px; border-radius:8px; border:1px solid #ccc;">
+      <button onclick="joinMeet()" class="btn-primary" style="margin-left:10px;">Join Meeting</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 SkillCycle | Designed with ❤️ for Growth</p>
+  </footer>
+
+  <script>
+    function joinMeet() {
+      const code = document.getElementById('meetCode').value.trim();
+      if (code) {
+        window.open(`https://meet.google.com/${code}`, '_blank');
+      } else {
+        alert('Please enter a valid meeting code.');
+      }
+    }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
